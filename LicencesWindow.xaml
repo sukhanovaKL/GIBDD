@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GIBDD"
         mc:Ignorable="d"
-        Title="Водительские удостоверения" Height="450" Width="800">
+        Title="Водительские удостоверения" Height="450" Width="800"
+        Icon="Images/gibdd_logo.png">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>

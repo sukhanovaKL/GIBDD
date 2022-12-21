@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:GIBDD"
         mc:Ignorable="d"
         Title="Авторизация" Height="328.125" Width="428.125"
-        Icon="Images/gibdd_logo.png"
-        >
+        Icon="Images/gibdd_logo.png">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>

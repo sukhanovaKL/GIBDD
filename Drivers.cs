@@ -35,8 +35,15 @@ namespace GIBDD
         public string Jobname { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
-        public string Photo { get; set; }
+        public string Photo {
+            get => "C:/Users/79393/source/repos/GIBDD" + photoPath;
+            set => photoPath = value;
+        }
         public string Description { get; set; }
+
+        public string Fio => Surname + " " + Name + " " + Middlename;
+
+        string photoPath = "";
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DTP_Driver> DTP_Driver { get; set; }

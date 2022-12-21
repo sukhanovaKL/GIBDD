@@ -24,8 +24,8 @@ namespace GIBDD
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
-            var f = (sender as Button).DataContext as Drivers;
-            new EditDriverWindow(f).Show();
+            var driver = (sender as Button).DataContext as Drivers;
+            new EditDriverWindow(driver, _user).Show();
             Hide();
         }
 
@@ -33,6 +33,32 @@ namespace GIBDD
         {
             new Profile(_user).Show();
             Hide();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var driver = (sender as Button).DataContext as Drivers;
+            db.Drivers.Remove(driver);
+            db.SaveChanges();
+            data.ItemsSource = db.Drivers.ToList();
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            new CreateDriverWindow(_user).Show();
+            Hide();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Search.Text.Length != 0)
+                data.ItemsSource = db.Drivers.Where(x => x.Address.Contains(Search.Text)).ToList();
+            Search.ItemsSource = db.Drivers.Select(x => x.Address).ToList();
+        }
+
+        private void СancellationButton_Click(object sender, RoutedEventArgs e)
+        {
+            data.ItemsSource = db.Drivers.ToList();
         }
     }
 }

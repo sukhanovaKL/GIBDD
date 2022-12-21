@@ -5,14 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GIBDD"
         mc:Ignorable="d"
-        Title="Редактирование водителя" Height="450" Width="800">
+        Title="Редактирование водителя" Height="450" Width="500"
+        Icon="Images/gibdd_logo.png">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="White" Offset="0"/>
             <GradientStop Color="#FFB5D5CA" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
+    <Grid x:Name="Driver">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Редактирование" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="4"></Label>
+        <Image Grid.ColumnSpan="2" Grid.RowSpan="5" Grid.Column="1" Grid.Row="1" Source="{Binding Photo}"></Image>
+
+        <Label Content="Фамилия" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6"></Label>
+        <TextBox x:Name="Surname" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6"></TextBox>
+
+        <Label Content="Имя" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="7"></Label>
+        <TextBox x:Name="Name" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="7"></TextBox>
+
+
+        <Label Content="Отчество" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="8"></Label>
+        <TextBox x:Name="Middlename" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8"></TextBox>
         
+        <Label Content="Серия паспорта" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="9"></Label>
+        <TextBox x:Name="PassportSerial" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="9"></TextBox>
+        
+        <Label Content="Номер паспорта" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="10"></Label>
+        <TextBox x:Name="PassportNumber" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="10"></TextBox>
+
+        <Label Content="Почта" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="11"></Label>
+        <TextBox x:Name="Email" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="11"></TextBox>
+        
+        <Label Content="Адрес прописки" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="6"></Label>
+        <TextBox x:Name="Address" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="6"></TextBox>
+        
+        <Label Content="Адрес проживания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="7"></Label>
+        <TextBox x:Name="AddressLife" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="7"></TextBox>
+
+        <Label Content="Компания" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="8"></Label>
+        <TextBox x:Name="Company" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="8"></TextBox>
+
+        <Label Content="Должность" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="9"></Label>
+        <TextBox x:Name="Jobname" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="9"></TextBox>
+
+        <Label Content="Номер" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="10"></Label>
+        <TextBox x:Name="Phone" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="10"></TextBox>
+
+        <Label Content="Посткод" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="11"></Label>
+        <TextBox x:Name="Postcode" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="11"></TextBox>
+
+        <Button Content="Назад" Grid.Column="3" Grid.Row="12" Height="25" Width="100" Background="#B2E0A9AF" Click="Button_Click_1"></Button>
+        <Button Content="Сохранить" Grid.Column="2" Grid.Row="12" Height="25" Width="100" Background="#B2E0A9AF" Click="Button_Click"></Button>
     </Grid>
 </Window>
