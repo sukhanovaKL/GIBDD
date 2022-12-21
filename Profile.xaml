@@ -1,0 +1,37 @@
+﻿<Window x:Class="GIBDD.Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GIBDD"
+        mc:Ignorable="d"
+        Title="Профиль" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White" Offset="0"/>
+            <GradientStop Color="#FFB5D5CA" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid x:Name="Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Source="Images/gibdd_logo.png" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4"></Image>
+        <Label Content="Добро пожаловать!" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></Label>
+        <Button x:Name="Drivers" Content="Водители" Width="200" Height="35" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Drivers_Click" Background="#FFE0A9AF"></Button>
+        <Button x:Name="Licences" Content="Водительские удостоверения" Width="200" Height="35" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Licences_Click" Background="#FFE0A9AF"></Button>
+        <Button x:Name="Fines" Content="Штрафы" Width="200" Height="35" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Fines_Click" Background="#FFE0A9AF"></Button>
+        <Button x:Name="Exist" Content="Выйти" Width="200" Height="35" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Exist_Click" Background="#FFE0A9AF"></Button>
+    </Grid>
+</Window>
+ 
