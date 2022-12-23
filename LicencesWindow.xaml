@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GIBDD"
+        xmlns:local="clr-namespace:GIBDD" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
         mc:Ignorable="d"
         Title="Водительские удостоверения" Height="450" Width="800"
         Icon="Images/gibdd_logo.png">
@@ -14,11 +14,18 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid x:Name="Licences">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="178*"/>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="331*"/>
+            <ColumnDefinition Width="35*"/>
+            <ColumnDefinition Width="126*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.9*"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="data" Grid.Row="1" Width="790" Height="370" VerticalAlignment="Bottom">
+        <ListView x:Name="data" Grid.Row="1" Width="790" Height="370" VerticalAlignment="Bottom" Grid.ColumnSpan="5">
             <ListView.Background>
                 <LinearGradientBrush EndPoint="0.5,0.5" StartPoint="0.5,0.05">
                     <GradientStop Color="White" Offset="0"/>
@@ -44,23 +51,24 @@
                                 <RowDefinition Height="0.2*"/>
                                 <RowDefinition Height="0.2*"/>
                                 <RowDefinition Height="0.2*"/>
-                                <RowDefinition Height="0.2*"/>
-                                <RowDefinition Height="0.2*"/>
                             </Grid.RowDefinitions>
-                            <Image Grid.Row="0" Grid.RowSpan="5" Grid.Column="0" Source="{Binding Photo}" Width="40" Height="40"></Image>
-                            <Label Content="{Binding Phone}" Grid.Column="1" Grid.Row="1"/>
-                            <Label Content="{Binding Surname}" Grid.Column="1" Grid.Row="0"/>
-                            <Label Content="{Binding Name}" Grid.Column="2" Grid.Row="0"/>
-                            <Label Content="{Binding Email}" Grid.Column="1" Grid.Row="2"/>
-                            <Label Content="Адрес: " Grid.Column="1" Grid.Row="3"/>
-                            <Label Content="{Binding Address}" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="3"/>
-                            <Button x:Name="OpenButton" Content="Открыть" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" Width="100" Height="30" Click="OpenButton_Click"/>
-                            <Button x:Name="DeleteButton" Content="Удалить" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" Width="100" Height="30"/>
+                            <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="Images/driver_license_template.jpg" Width="90" Height="90"></Image>
+
+                            <Label Content="{Binding LicenceNumberString}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0"></Label>
+                            <Label Content="{Binding LicenceDateString}" Grid.Column="1"  Grid.ColumnSpan="2" Grid.Row="1"></Label>
+                            <Label Content="{Binding VINString}" Grid.Column="1"  Grid.ColumnSpan="2" Grid.Row="2"></Label>
+
+                            <Button x:Name="OpenButton" Content="Открыть" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Right" Width="100" Height="30" Click="OpenButton_Click" Background="#B2E0A9AF"/>
+                            <Button x:Name="DeleteButton" Content="Удалить" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Right" Width="100" Height="30" Click="DeleteButton_Click" Background="#B2E0A9AF"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="BackButton" Content="Назад" Grid.Row="0" Width="200" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Click="BackButton_Click"/>
+        <controls:AutoCompleteBox x:Name="Search" Grid.Row="0" Width="190" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Введите для поиска" Grid.ColumnSpan="2"/>
+        <Button x:Name="SearchButton" Content="Найти" HorizontalAlignment="Right" Grid.Row="0" Width="100" Height="30" Grid.Column="0" Grid.ColumnSpan="2" Background="#B2E0A9AF" Click="SearchButton_Click"></Button>
+        <Button x:Name="СancellationButton" Content="Отмена поиска" HorizontalAlignment="Left" Grid.Row="0" Width="100" Height="30" Grid.Column="2" Background="#B2E0A9AF" Click="СancellationButton_Click"></Button>
+        <Button x:Name="BackButton" Content="Назад" Grid.Row="0" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Click="BackButton_Click_1"  Grid.Column="4" Background="#B2E0A9AF"/>
+        <Button x:Name="CreateButton" Content="Создать" Grid.Row="0" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center" Click="CreateButton_Click"  Grid.Column="2" Background="#B2E0A9AF"/>
     </Grid>
 </Window>

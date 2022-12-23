@@ -42,26 +42,33 @@ namespace GIBDD
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var driver = new Drivers
+            try
             {
-                IdGuid = Guid.NewGuid(),
-                Surname = Surname.Text,
-                Name = Name.Text,
-                Middlename = Middlename.Text,
-                PassportSerial = int.Parse(PassportSerial.Text),
-                PassportNumber = int.Parse(PassportNumber.Text),
-                Email = Email.Text,
-                Address = Address.Text,
-                AddressLife = AddressLife.Text,
-                Company = Company.Text,
-                Jobname = Jobname.Text,
-                Phone = Phone.Text,
-                Postcode = int.Parse(Postcode.Text),
-                Photo = ImagePath
-            };
-            db.Drivers.Add(driver);
+                var driver = new Drivers
+                {
+                    IdGuid = Guid.NewGuid(),
+                    Surname = Surname.Text,
+                    Name = Name.Text,
+                    Middlename = Middlename.Text,
+                    PassportSerial = int.Parse(PassportSerial.Text),
+                    PassportNumber = int.Parse(PassportNumber.Text),
+                    Email = Email.Text,
+                    Address = Address.Text,
+                    AddressLife = AddressLife.Text,
+                    Company = Company.Text,
+                    Jobname = Jobname.Text,
+                    Phone = Phone.Text,
+                    Postcode = int.Parse(Postcode.Text),
+                    Photo = ImagePath
+                };
+                db.Drivers.Add(driver);
 
-            db.SaveChanges();
+                db.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
 
         private void AddPhoto_Click(object sender, RoutedEventArgs e)

@@ -37,10 +37,17 @@ namespace GIBDD
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var driver = (sender as Button).DataContext as Drivers;
-            db.Drivers.Remove(driver);
-            db.SaveChanges();
-            data.ItemsSource = db.Drivers.ToList();
+            try
+            {
+                var driver = (sender as Button).DataContext as Drivers;
+                db.Drivers.Remove(driver);
+                db.SaveChanges();
+                data.ItemsSource = db.Drivers.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Данного водителя нельзя удалить!");
+            }
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)

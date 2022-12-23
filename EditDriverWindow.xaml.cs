@@ -36,21 +36,28 @@ namespace GIBDD
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var updatedDriver = db.Drivers.Find(_driver.IdGuid);
-            updatedDriver.Surname = Surname.Text;
-            updatedDriver.Name = Name.Text;
-            updatedDriver.Middlename = Middlename.Text;
-            updatedDriver.PassportSerial = int.Parse(PassportSerial.Text);
-            updatedDriver.PassportNumber = int.Parse(PassportNumber.Text);
-            updatedDriver.Email = Email.Text;
-            updatedDriver.Address = Address.Text;
-            updatedDriver.AddressLife = AddressLife.Text;
-            updatedDriver.Company = Company.Text;
-            updatedDriver.Jobname = Jobname.Text;
-            updatedDriver.Phone = Phone.Text;
-            updatedDriver.Postcode = int.Parse(Postcode.Text);
+            try
+            {
+                var updatedDriver = db.Drivers.Find(_driver.IdGuid);
+                updatedDriver.Surname = Surname.Text;
+                updatedDriver.Name = Name.Text;
+                updatedDriver.Middlename = Middlename.Text;
+                updatedDriver.PassportSerial = int.Parse(PassportSerial.Text);
+                updatedDriver.PassportNumber = int.Parse(PassportNumber.Text);
+                updatedDriver.Email = Email.Text;
+                updatedDriver.Address = Address.Text;
+                updatedDriver.AddressLife = AddressLife.Text;
+                updatedDriver.Company = Company.Text;
+                updatedDriver.Jobname = Jobname.Text;
+                updatedDriver.Phone = Phone.Text;
+                updatedDriver.Postcode = int.Parse(Postcode.Text);
 
-            db.SaveChanges();
+                db.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

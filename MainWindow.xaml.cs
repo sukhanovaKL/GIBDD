@@ -19,11 +19,18 @@ namespace GIBDD
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            var user = new Functions().Autorization(Login.Text, Password.Text);
-            if (user != null)
+            try
             {
-                new Profile(user).Show();
-                Hide();
+                var user = new Functions().Autorization(Login.Text, Password.Text);
+                if (user != null)
+                {
+                    new Profile(user).Show();
+                    Hide();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
             }
         }
     }

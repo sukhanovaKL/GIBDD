@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace GIBDD
@@ -31,7 +32,30 @@ namespace GIBDD
 
         private void OpenButton_Click(object sender, RoutedEventArgs e)
         {
+            var fine = (sender as Button).DataContext as Fine;
+            new EditFineWindow(_user, fine).Show();
+            Hide();
+        }
 
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            new CreateFineWindow(_user).Show();
+            Hide();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var fine = (sender as Button).DataContext as Fine;
+                db.Fine.Remove(fine);
+                db.SaveChanges();
+                data.ItemsSource = db.Fine.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка!");
+            }
         }
     }
 }

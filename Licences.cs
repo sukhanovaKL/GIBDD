@@ -37,7 +37,14 @@ namespace GIBDD
         public int IdStatus { get; set; }
         public string CarNumber { get; set; }
         public Nullable<int> IdRegion { get; set; }
-    
+
+        public string LicenceNumberString => "Лицензия №" + Id.ToString();
+
+        public string LicenceDateString => "Дата выдачи лицензии: " + LicenceDate.ToString();
+
+        public string VINString => "VIN: " + VIN;
+
+
         public virtual CarColors CarColors { get; set; }
         public virtual Drivers Drivers { get; set; }
         public virtual LicenceStatus LicenceStatus { get; set; }

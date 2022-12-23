@@ -88,6 +88,12 @@
     <Compile Include="CreateDriverWindow.xaml.cs">
       <DependentUpon>CreateDriverWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CreateFineWindow.xaml.cs">
+      <DependentUpon>CreateFineWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateLicenceWindow.xaml.cs">
+      <DependentUpon>CreateLicenceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Drivers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="EditDriverWindow.xaml.cs">
       <DependentUpon>EditDriverWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditFineWindow.xaml.cs">
+      <DependentUpon>EditFineWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EditLicenceWindow.xaml.cs">
       <DependentUpon>EditLicenceWindow.xaml</DependentUpon>
@@ -159,11 +168,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CreateFineWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateLicenceWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DriversWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditDriverWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditFineWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -439,6 +460,7 @@
     <Resource Include="Resources\200-sleepy.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\driver_license_template.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
