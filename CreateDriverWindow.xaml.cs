@@ -42,32 +42,39 @@ namespace GIBDD
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            try
+            if (!Email.Text.Contains("@"))
             {
-                var driver = new Drivers
-                {
-                    IdGuid = Guid.NewGuid(),
-                    Surname = Surname.Text,
-                    Name = Name.Text,
-                    Middlename = Middlename.Text,
-                    PassportSerial = int.Parse(PassportSerial.Text),
-                    PassportNumber = int.Parse(PassportNumber.Text),
-                    Email = Email.Text,
-                    Address = Address.Text,
-                    AddressLife = AddressLife.Text,
-                    Company = Company.Text,
-                    Jobname = Jobname.Text,
-                    Phone = Phone.Text,
-                    Postcode = int.Parse(Postcode.Text),
-                    Photo = ImagePath
-                };
-                db.Drivers.Add(driver);
-
-                db.SaveChanges();
+                MessageBox.Show("Почта должна содержать @");
             }
-            catch
+            else
             {
-                MessageBox.Show("Ошибка");
+                try
+                {
+                    var driver = new Drivers
+                    {
+                        IdGuid = Guid.NewGuid(),
+                        Surname = Surname.Text,
+                        Name = Name.Text,
+                        Middlename = Middlename.Text,
+                        PassportSerial = int.Parse(PassportSerial.Text),
+                        PassportNumber = int.Parse(PassportNumber.Text),
+                        Email = Email.Text,
+                        Address = Address.Text,
+                        AddressLife = AddressLife.Text,
+                        Company = Company.Text,
+                        Jobname = Jobname.Text,
+                        Phone = Phone.Text,
+                        Postcode = int.Parse(Postcode.Text),
+                        Photo = ImagePath
+                    };
+                    db.Drivers.Add(driver);
+
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка");
+                }
             }
         }
 
