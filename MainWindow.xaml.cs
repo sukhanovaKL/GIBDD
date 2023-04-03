@@ -1,6 +1,4 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace GIBDD
 {
@@ -14,14 +12,14 @@ namespace GIBDD
             InitializeComponent();
 
             Login.Text = "inspector";
-            Password.Text = "inspector";
+            Password.Password = "inspector";
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                var user = new Functions().Autorization(Login.Text, Password.Text);
+                var user = new Functions().Autorization(Login.Text, Password.Password);
                 if (user != null)
                 {
                     new Profile(user).Show();

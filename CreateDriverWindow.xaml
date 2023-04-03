@@ -48,10 +48,10 @@
         <TextBox x:Name="Middlename" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"></TextBox>
 
         <Label Content="Серия паспорта" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"></Label>
-        <TextBox x:Name="PassportSerial" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"></TextBox>
+        <TextBox x:Name="PassportSerial" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" MaxLength="4"></TextBox>
 
         <Label Content="Номер паспорта" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"></Label>
-        <TextBox x:Name="PassportNumber" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"></TextBox>
+        <TextBox x:Name="PassportNumber" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5" MaxLength="6"></TextBox>
 
         <Label Content="Почта" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6"></Label>
         <TextBox x:Name="Email" Width="100" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="6"></TextBox>

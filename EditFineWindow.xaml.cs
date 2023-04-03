@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GIBDD
 {
@@ -53,10 +42,11 @@ namespace GIBDD
                 var fine = db.Fine.Find(_fine.Id);
                 fine.IdStatus = ((FineStatuses)(IdStatus.SelectedItem)).Id;
                 db.SaveChanges();
+                MessageBox.Show("Успешно!");
             }
             catch
             {
-                MessageBox.Show("Ошибка");
+                MessageBox.Show("Ошибка!");
             }
         }
     }
